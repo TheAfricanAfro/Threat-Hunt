@@ -409,7 +409,7 @@ Identify remote share reconnaissance.
 Recon moved off-host toward the estate's data store, preceding cross-department access.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/11.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on net view/net share against file servers from workstations outside admin change windows.
@@ -438,7 +438,7 @@ Identify enumeration beyond the account's role.
 This is the first clear step outside role entitlement , targeting HR before touching HR data.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/12.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on domain group enumeration of sensitive groups (HR, Finance, DA) from non-admin accounts.
@@ -466,7 +466,7 @@ Opened HR file **`access_request_queue_20260526.csv`** from `\\NH-FS-01\HR\2026-
 Definitive role violation: HR share contents read by an IT support account over the network.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/13.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Map share ACLs to roles and alert on first-time cross-department share access per account.
@@ -495,7 +495,7 @@ Locate the staging folder.
 An innocuous, role-plausible folder name ("SupportReview") used to blend collection into normal work.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/14.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Detect cmd/robocopy copies from cross-department UNC paths into user profile folders.
@@ -524,7 +524,7 @@ Identify the compression artifact.
 Compression of staged cross-department data marks the transition from collection to exfiltration.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/15.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on archive creation by PowerShell in user profiles shortly after cross-share file copies.
@@ -554,7 +554,7 @@ The archive was copied to **`\\tsclient\G\Temp\NimbusSupport`** at 21:57:17 , th
 The data walked out through the channel already open; defenders watching only egress/web proxies would see nothing.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/16.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on any file writes to `\\tsclient\*` paths; disable RDP drive redirection where not required.
@@ -576,7 +576,7 @@ Prove or disprove persistence.
 A negative finding must be evidenced: every entry accounted for, none operator-created. Containment can therefore focus on credentials and the exposed RDP path.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/17.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Baseline autoruns per host; diff against the golden set during IR rather than eyeballing.
@@ -598,7 +598,7 @@ Confirm single-host scope.
 No lateral execution means file-server forensics can stand down; the compromise footprint is one workstation plus share-level data access.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/18.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Corroborate share access claims with process telemetry on the server before declaring lateral movement.
@@ -620,7 +620,7 @@ Attribute correctly and rule out alternatives.
 Calling this "a curious new starter" would burn an innocent employee and leave the actual attack path , credential reuse against an exposed endpoint , wide open.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/19.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Treat "insider" conclusions as unproven until source IP, timing, and credential-exposure context are examined.
@@ -642,7 +642,7 @@ From 116.45.242.115: **3 failed logons, then a success**. Brute force requires v
 The failure-to-success ratio is the fingerprint distinguishing credential stuffing (T1110.004) from brute force (T1110.001), which changes both root cause and remediation.
 
 ### 🖼️ Screenshot
-![LinkedIn profile header](Images/2.png)
+![LinkedIn profile header](Images/20.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on ≤5 failures followed by success from a previously unseen external source , the signature of a tested credential.
