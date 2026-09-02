@@ -380,7 +380,7 @@ Classify a file deletion inside the burst window.
 Not every deletion is anti-forensics; misreading routine cleanup as cover-up corrupts the narrative and the report.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/3.png)
+![Role matrix , m.reed highlighted](Images/10.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Whitelist known application self-cleanup patterns before alerting on deletions in user profiles.
