@@ -106,7 +106,7 @@ DeviceLogonEvents
 ```
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Baseline logon sources per account; alert when a single account is targeted by a low-volume external source distinct from spray noise.
@@ -135,7 +135,7 @@ LinkedIn lists his title as **`IT Support Technician`** at Nimbus Health (starte
 The title told an attacker this account likely had elevated reach on IT systems and would be plausible on the IT support workstation.
 
 ### 🖼️ Screenshot
-![LinkedIn profile header](images/2.png)
+![LinkedIn profile header](Images/2.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Include new-hire OSINT exposure review in onboarding for privileged/IT roles.
@@ -163,7 +163,7 @@ Public contact email on the profile: **`mason.reed@hotmail.com`** , personal, no
 A personal address is what breach-lookup services key on; publishing it links personal breach history to a corporate identity.
 
 ### 🖼️ Screenshot
-![LinkedIn contact panel](images/5.png)
+![LinkedIn contact panel](Images/5.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Monitor corporate identities against breach-notification services using both corporate and known personal addresses.
@@ -192,9 +192,9 @@ Determine which exposure actually handed over a working password.
 Age and format of leaked data determine attacker utility; recent plaintext credential-stuffing data directly explains a three-try success.
 
 ### 🖼️ Screenshot
-![Synthient breach](images/4_1.png)
-![Combolists breach](images/4_2.png)
-![MySpace breach](images/4_3.png)
+![Synthient breach](Images/4_1.png)
+![Combolists breach](Images/4_2.png)
+![MySpace breach](Images/4_3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Screen new-hire credentials against known-breached password corpora at onboarding and password change.
@@ -223,7 +223,7 @@ A cached internal "Remote Support Reference" in a public document cache named `N
 This converted a stolen credential into an intrusion: identity + password + reachable endpoint.
 
 ### 🖼️ Screenshot
-![Cached Remote Support Reference](images/1.png)
+![Cached Remote Support Reference](Images/1.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Periodically search public caches/archives for internal hostnames, IPs, and doc paths; remove and rotate anything found.
@@ -261,7 +261,7 @@ DeviceLogonEvents
 ```
 
 ### 🖼️ Screenshot
-![m.reed logons , 3 failures then success from 116.45.242.115](images/6.png)
+![m.reed logons , 3 failures then success from 116.45.242.115](Images/6.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on first-ever successful external logon for an account, and on failure→success sequences from a single new source.
@@ -291,7 +291,7 @@ Logon type **`RemoteInteractive`** , an RDP session, not a local console logon a
 RDP gives full keyboard control and, critically, opens the drive-redirection channel later used for exfiltration.
 
 ### 🖼️ Screenshot
-![RemoteInteractive logon](images/7.png)
+![RemoteInteractive logon](Images/7.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on any RemoteInteractive logon to internet-exposed hosts from non-corporate IP space.
@@ -320,7 +320,7 @@ Second external source: **`45.131.194.61`** , same account, new RDP session at 2
 Infrastructure switching mid-operation indicates a deliberate external operator, not a confused employee.
 
 ### 🖼️ Screenshot
-![Second source 45.131.194.61](images/8.png)
+![Second source 45.131.194.61](Images/8.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert when one account authenticates from multiple distinct external ASNs within a short window.
@@ -351,7 +351,7 @@ Session opened 21:28:29; ~2 min of first-logon housekeeping (userinit, profile c
 Anchoring on session open would misattribute Windows/Edge first-run noise to the operator; the burst is classic who/where/what-can-I-do discovery.
 
 ### 🖼️ Screenshot
-![Orientation burst](images/9.png)
+![Orientation burst](Images/9.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Detect discovery-command clusters (whoami+hostname+ipconfig within minutes) under a fresh RemoteInteractive session.
@@ -380,7 +380,7 @@ Classify a file deletion inside the burst window.
 Not every deletion is anti-forensics; misreading routine cleanup as cover-up corrupts the narrative and the report.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Whitelist known application self-cleanup patterns before alerting on deletions in user profiles.
@@ -409,7 +409,7 @@ Identify remote share reconnaissance.
 Recon moved off-host toward the estate's data store, preceding cross-department access.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on net view/net share against file servers from workstations outside admin change windows.
@@ -438,7 +438,7 @@ Identify enumeration beyond the account's role.
 This is the first clear step outside role entitlement , targeting HR before touching HR data.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on domain group enumeration of sensitive groups (HR, Finance, DA) from non-admin accounts.
@@ -466,7 +466,7 @@ Opened HR file **`access_request_queue_20260526.csv`** from `\\NH-FS-01\HR\2026-
 Definitive role violation: HR share contents read by an IT support account over the network.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Map share ACLs to roles and alert on first-time cross-department share access per account.
@@ -495,7 +495,7 @@ Locate the staging folder.
 An innocuous, role-plausible folder name ("SupportReview") used to blend collection into normal work.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Detect cmd/robocopy copies from cross-department UNC paths into user profile folders.
@@ -524,7 +524,7 @@ Identify the compression artifact.
 Compression of staged cross-department data marks the transition from collection to exfiltration.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on archive creation by PowerShell in user profiles shortly after cross-share file copies.
@@ -554,7 +554,7 @@ The archive was copied to **`\\tsclient\G\Temp\NimbusSupport`** at 21:57:17 , th
 The data walked out through the channel already open; defenders watching only egress/web proxies would see nothing.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on any file writes to `\\tsclient\*` paths; disable RDP drive redirection where not required.
@@ -576,7 +576,7 @@ Prove or disprove persistence.
 A negative finding must be evidenced: every entry accounted for, none operator-created. Containment can therefore focus on credentials and the exposed RDP path.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Baseline autoruns per host; diff against the golden set during IR rather than eyeballing.
@@ -598,7 +598,7 @@ Confirm single-host scope.
 No lateral execution means file-server forensics can stand down; the compromise footprint is one workstation plus share-level data access.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Corroborate share access claims with process telemetry on the server before declaring lateral movement.
@@ -620,7 +620,7 @@ Attribute correctly and rule out alternatives.
 Calling this "a curious new starter" would burn an innocent employee and leave the actual attack path , credential reuse against an exposed endpoint , wide open.
 
 ### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](images/3.png)
+![Role matrix , m.reed highlighted](Images/3.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Treat "insider" conclusions as unproven until source IP, timing, and credential-exposure context are examined.
@@ -642,7 +642,7 @@ From 116.45.242.115: **3 failed logons, then a success**. Brute force requires v
 The failure-to-success ratio is the fingerprint distinguishing credential stuffing (T1110.004) from brute force (T1110.001), which changes both root cause and remediation.
 
 ### 🖼️ Screenshot
-![LinkedIn profile header](images/2.png)
+![LinkedIn profile header](Images/2.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on ≤5 failures followed by success from a previously unseen external source , the signature of a tested credential.
