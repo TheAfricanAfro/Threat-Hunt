@@ -597,8 +597,7 @@ Confirm single-host scope.
 ### 💡 Why it matters
 No lateral execution means file-server forensics can stand down; the compromise footprint is one workstation plus share-level data access.
 
-### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/18.png)
+
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Corroborate share access claims with process telemetry on the server before declaring lateral movement.
@@ -619,8 +618,7 @@ Attribute correctly and rule out alternatives.
 ### 💡 Why it matters
 Calling this "a curious new starter" would burn an innocent employee and leave the actual attack path , credential reuse against an exposed endpoint , wide open.
 
-### 🖼️ Screenshot
-![Role matrix , m.reed highlighted](Images/19.png)
+
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Treat "insider" conclusions as unproven until source IP, timing, and credential-exposure context are examined.
@@ -641,8 +639,6 @@ From 116.45.242.115: **3 failed logons, then a success**. Brute force requires v
 ### 💡 Why it matters
 The failure-to-success ratio is the fingerprint distinguishing credential stuffing (T1110.004) from brute force (T1110.001), which changes both root cause and remediation.
 
-### 🖼️ Screenshot
-![LinkedIn profile header](Images/20.png)
 
 ### 🛠️ Detection Recommendation
 **Hunting Tip:** Alert on ≤5 failures followed by success from a previously unseen external source , the signature of a tested credential.
